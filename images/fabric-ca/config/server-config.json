@@ -1,7 +1,7 @@
 {
  "tls_disable":true,
- "ca_cert":"/.fabric-ca/ec.pem",
- "ca_key":"/.fabric-ca/ec-key.pem",
+ "ca_cert":"/etc/hyperledger/fabric-ca/ec.pem",
+ "ca_key":"/etc/hyperledger/fabric-ca/ec-key.pem",
  "users": {
     "admin": {
       "pass": "adminpw",
