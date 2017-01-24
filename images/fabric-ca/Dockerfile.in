@@ -6,12 +6,5 @@ COPY payload/fabric-ca /usr/local/bin
 # Copy the configuration files
 ADD payload/sampleconfig.tar.bz2 $FABRIC_CA_HOME
 
-# Copy the same certificates that are currently hardcoded into the peers
-COPY payload/root.pem /.fabric-ca/root.pem
-COPY payload/tls_client-cert.pem /.fabric-ca/tls_client-cert.pem
-COPY payload/tls_client-key.pem /.fabric-ca/tls_client-key.pem
-COPY payload/ec-key.pem /.fabric-ca/ec-key.pem
-COPY payload/ec.pem /.fabric-ca/ec.pem
-
 EXPOSE 7054
-CMD fabric-ca server start -address 0.0.0.0 -config $FABRIC_CA_HOME/server-config.json
+CMD fabric-ca server start -address 0.0.0.0 -ca $FABRIC_CA_HOME/ec.pem -ca-key $FABRIC_CA_HOME/ec-key.pem -config $FABRIC_CA_HOME/server-config.json

@@ -1,7 +1,7 @@
 {
  "tls_disable":true,
- "ca_cert":"/.fabric-ca/ec.pem",
- "ca_key":"/.fabric-ca/ec-key.pem",
+ "ca_cert":"ec.pem",
+ "ca_key":"ec-key.pem",
  "users": {
     "admin": {
       "pass": "adminpw",

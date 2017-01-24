@@ -105,11 +105,6 @@ build/image/$(PROJECT_NAME)/payload:	build/docker/bin/fabric-ca \
 
 build/image/%/payload:
 	mkdir -p $@
-	cp images/fabric-ca/root.pem $@/root.pem
-	cp images/fabric-ca/tls_client-cert.pem $@/tls_client-cert.pem
-	cp images/fabric-ca/tls_client-key.pem $@/tls_client-key.pem
-	cp images/fabric-ca/ec.pem $@/ec.pem
-	cp images/fabric-ca/ec-key.pem $@/ec-key.pem
 	cp $^ $@
 
 build/image/%/$(DUMMY): Makefile build/image/%/payload
